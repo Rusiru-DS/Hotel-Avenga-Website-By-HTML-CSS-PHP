@@ -1,0 +1,81 @@
+
+body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.topic {
+    text-align: center;
+    margin-top: 50px;
+}
+
+h1 {
+    font-size: 36px;
+    margin: 0;
+    padding: 10px;
+    color: #fff;
+    background-color: rgba(51, 51, 51, 0.7); /* Transparent background color */
+}
+
+.container {
+    width: 400px;
+    margin: 0 auto;
+    background-color: rgba(245, 245, 245, 0.7); /* Transparent background color */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+input[type="date"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#venue {
+    text-align: center;
+}
+
+#galleryLink {
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#galleryLink:hover {
+    text-decoration: underline;
+}
+
+#foodPackage {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(51, 51, 51, 0.7); /* Transparent background color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: rgba(85, 85, 85, 0.7); /* Transparent background color */
+}

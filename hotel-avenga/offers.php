@@ -1,0 +1,214 @@
+<?php
+     include('db.php');
+
+     session_start();
+
+     $display_name = "Guest";
+     if(isset($_SESSION['user_data']['firstname'])){
+        $display_name = $_SESSION['user_data']['firstname'];
+     };
+
+     if(isset($_GET['logout'])){
+        unset($display_name);
+        session_destroy();
+        header('location:index.php');
+     }
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hotel Offers</title>
+    <!-- <link rel="stylesheet" href="css/footer.css"> -->
+    <link rel="stylesheet" href="css/offer.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+
+<body>
+
+    <!------Header------->
+
+    <section class="header">
+        <nav>
+            <!-- <h1 class="headerh1"><a href="index.php">HOTEL AVENGA</a></h1> -->
+            <div class="logo">
+                <div class="logo">
+                    <a href="index.php"><img src="img/logo_no_bg.png" width=150px></a>
+                </div>
+            </div>
+        </nav>
+    </section>
+
+<!------Navigation Bar-------->
+    <section class="nav-links">
+        <nav>
+            <div class="nav_section" id="navSection">
+                <ul>
+                  <li> <a href="index.php" class="nav-link">Home</a> </li>
+                  <li> <a href="events.php" class="nav-link">Events</a> </li>
+                  <li> <a href="offers.php" class="nav-link">Offers</a> </li>
+                  <li> <a href="booking.php" class="nav-link">Bookings</a> </li>
+                  <li> <a href="feedback.php" class="nav-link">Feedback</a> </li>
+                  <li> <a href="contact.php" class="nav-link">Contact Us</a> </li>
+                  <?php if(isset($_SESSION['user_data'])) { ?>
+                    <li> <a href="user.php" class="nav-link">User</a> </li>
+                    <li> <a href="?logout" class="nav-link">Logout</a> </li>
+                  <?php } else { ?>
+                    <li> <a href="login.php" class="nav-link">Login</a> </li>
+                  <?php } ?>
+                    <i class="fa fa-search fa-lg"></i>
+                </ul>
+            </div>
+
+        </nav>
+
+    </section>
+
+
+    <div class="main">
+        <center><h1>Ongoing Offers</h1></center>
+
+        <div class="card">
+            <div class="image">
+                <img src="img/offertra.jpg">
+            </div>
+            <div class="title">
+                <h2>Early Bird Offer</h2>
+            </div>
+            <div class="des">
+                <p>40% OFF<br>Valid until 30th July</p>
+                <button>Apply Now</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="image">
+                <img src="img/offervilla.jpg">
+            </div>
+            <div class="title">
+                <h2>Whole Villa Offer</h2>
+            </div>
+            <div class="des">
+                <p>30% OFF<br>Valid until 31st August</p>
+                <button>Apply Now</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="image">
+                <img src="img/travelim.jpg">
+            </div>
+            <div class="title">
+                <h2>Intoductory Offer</h2>
+            </div>
+            <div class="des">
+                <p>60% OFF<br>Valid until 30th June</p>
+                <button>Apply Now</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="image">
+                <img src="img/Oroom1.jpg">
+            </div>
+            <div class="title">
+                <h2>Room Rush</h2>
+            </div>
+            <div class="des">
+                <p>25% OFF<br>Valid until 26th July</p>
+                <button>Apply Now</button>
+            </div>
+        </div>
+
+        <hr><br>
+        <center><h1>Upcoming Offers</h1></center>
+        <div class="card">
+            <div class="image">
+                <img src="img/summ.jpg">
+            </div>
+            <div class="title">
+                <h2>Summer Vacation Offer</h2>
+            </div>
+            <div class="des">
+                <p>40% OFF<br>Valid until 30th July</p>
+                <button>Coming Soon</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="image">
+                <img src="img/nature1.jpeg">
+            </div>
+            <div class="title">
+                <h2>Traveller Offer</h2>
+            </div>
+            <div class="des">
+                <p>20% OFF<br>Valid until 2nd Octomber</p>
+                <button>Coming Soon</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="image">
+                <img src="img/wkoffer.webp">
+            </div>
+            <div class="title">
+                <h2>Weekend Special Offer</h2>
+            </div>
+            <div class="des">
+                <p>15% OFF<br>Valid until 25th September</p>
+                <button>Coming Soon</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="image">
+                <img src="img/resident.webp">
+            </div>
+            <div class="title">
+                <h2>Resident Offer</h2>
+            </div>
+            <div class="des">
+                <p>30% OFF<br>Valid until 14th September</p>
+                <button>Coming Soon</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer section -->
+    <div class="footer">
+        <div class="col-1">
+            <h3>Useful Links</h3>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+                <a href="#">Events</a>
+            <div class="social-icons">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-linkedin"></i>
+            </div>
+        </div>
+
+        <div class="col-2">
+            <h3>Latest News</h3>
+            <form>
+                <input type="email" placeholder="Your Email Address" required>
+                <br>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+
+        <div class="col-3">
+            <h3>Contact Information</h3>
+            <p>Operating Hours: Mon-Sun 8AM to 5PM<br>Telephone: +94124345678<br>Email: res@avengahotels.com</p><br><br>
+            <h3>Address</h3>
+            <p>34/2 <br>Pasan Mawatha<br>Colombo 03<br>Sri Lanka</p>
+        </div>
+    </div>
+    <!-- footer section -->
+
+
+</body>
+</html>
